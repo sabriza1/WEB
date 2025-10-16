@@ -1,0 +1,24 @@
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question("Введите ваше имя: ", function(name) {
+  rl.question("Введите ваш возраст: ", function(age) {
+    age = Number(age);
+
+    if (age < 7) {
+      console.log(`${name}, ты дошкольник.`);
+    } else if (age >= 7 && age <= 17) {
+      console.log(`${name}, ты школьник.`);
+    } else if (age >= 18 && age <= 22) {
+      console.log(`${name}, ты студент.`);
+    } else {
+      console.log(`${name}, ты взрослый человек.`);
+    }
+
+    rl.close();
+  });
+});
