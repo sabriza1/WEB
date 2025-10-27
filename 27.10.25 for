@@ -1,0 +1,15 @@
+//1
+const cars = ["BMW", "YOYOTA", "Lexus", "Honda", "FIT"];
+
+for (let i = 0; i < cars.length; i++) {
+  console.log(cars[i]);
+}
+
+//2
+const cars = ["Toyota", "Honda", "FIT", "BMW"];
+
+for (let i =0; i< cars[i].length; i++ ) {
+    for (let j =0; j<cars[i].length; j++) {
+    console.log(cars[i][j]);
+ }
+}
