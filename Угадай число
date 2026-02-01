@@ -1,0 +1,12 @@
+import random
+
+n = random.randint(1, 100)
+while True:
+    g = int(input("Угадай число от 1 до 100: "))
+    if g < n:
+        print("Больше")
+    elif g > n:
+        print("Меньше")
+    else:
+        print("Поздравляю! Ты угадал!")
+        break
