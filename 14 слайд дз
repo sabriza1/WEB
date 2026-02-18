@@ -1,0 +1,32 @@
+#3
+words = ["apple", "banana", "cherry", "blueberry"]
+longest_word = words[0] 
+for word in words:
+    if len(word) > len(longest_word):
+        longest_word = word
+print("The longest word is", longest_word)
+
+
+#4
+sentence = "python is a great programming language"
+words = sentence.split()
+if len(words) < 2:
+    print("Too short to modify")
+else:
+    for i in range(len(words)):
+        if i % 2 == 0:             
+            words[i] = words[i].capitalize()
+result = " ".join(words)
+    print(result)
+
+
+#5
+numbers = [1, 2, 2, 3, 4, 4, 5]
+
+delete_numbers = []
+
+for num in numbers:
+    if num not in delete_numbers:
+        delete_numbers.append(num)
+
+print(delete_numbers)
