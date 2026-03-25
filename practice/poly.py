@@ -39,6 +39,47 @@ dev.work()
 man.display_info()
 man.work()
 
+#другой метод
+
+from abc import ABC, abstractmethod
+
+class Employee(ABC):
+
+    @abstractmethod
+    def work(self):
+        pass
+
+    @abstractmethod
+    def info(self):
+        pass
+
+
+class Developer(Employee):
+    def work(self):
+        return "Aida пишет код на Python."
+
+    def info(self):
+        return "Имя: Aida, Возраст: 35, Зарплата: 40000"
+
+class Manager(Employee):
+    def work(self):
+        return "Maks управляет командой из 10 человек."
+
+    def info(self):
+        return "Имя: Maks, Возраст: 30, Зарплата: 70000"
+
+def show_work(employee):
+    print(employee.work())
+
+def show_info(employee):
+    print(employee.info())
+
+show_work(Developer())
+show_work(Manager())
+
+show_info(Developer())
+show_info(Manager())
+
 
 
 
