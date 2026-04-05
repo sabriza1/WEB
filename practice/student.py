@@ -1,47 +1,26 @@
 class Student:
-    def __init__(self, name, age, major, gpa, courses):
+    def __init__(self, student_id, name, age, grade):
+        self.student_id = student_id
         self.name = name
         self.age = age
-        self.major = major
-        self.gpa = gpa
-        self.course_list = courses  
+        self.grade = grade
 
-    def introduce(self):
-        print(f"Hello your name is {self.name}, your study is {self.major}")
+    def __str__(self):
+        return f"{self.student_id}, {self.name}, {self.age}, {self.grade}"
 
-    def show_gpa(self):
-        print(f"your GPA is {self.gpa}")
+    def to_dict(self):
+        return {
+            "student_id": self.student_id,
+            "name": self.name,
+            "age": self.age,
+            "grade": self.grade
+        }
 
-    def show_major(self):
-        print(f"your major is {self.major}")
-
-    def courses(self):
-        for course, grade in self.course_list:
-            print(f"{course}: {grade}")
-
-    def add_course(self, new_course):
-        self.course_list.append(new_course)
-        print(f"course {new_course} added")
-
-    def update_gpa(self, new_gpa):
-        self.gpa = new_gpa
-        print(f"your gpa updated to {self.gpa}")
-
-    def is_honor(self):
-        if float(self.gpa) > 3.5:
-            print(f"{self.name} is Honor")
-        else:
-            print(f"{self.name} is not Honor")
-
-
-
-s1 = Student("Ali", 20, "Computer Science", 4, [("math", 86,), ("physics", 67)])
-
-
-s1.introduce()
-s1.show_gpa()
-s1.courses()
-s1.add_course("IT")
-s1.update_gpa(3.8)
-s1.is_honor()
-s1.show_major()
+    @staticmethod
+    def from_dict(data):
+        return Student(
+            data["student_id"],
+            data["name"],
+            data["age"],
+            data["grade"]
+        )
